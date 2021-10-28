@@ -7,8 +7,8 @@ import 'home.dart';
 
 void main() => runZonedGuarded(() => runApp(const MyApp()),
         (Object error, StackTrace stackTrace) {
-      if (error is PlatformException) {
-        print('platform exception');
+      if (error is PlatformException && error.code == 'evaluateJavaScript_failed') {
+        print('platform exception (evaluateJavaScript_failed)');
       }
     });
 
